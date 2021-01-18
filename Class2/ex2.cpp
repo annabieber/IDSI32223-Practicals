@@ -2,7 +2,7 @@
 #include <cmath>
 using namespace std;
 
-int main()
+void func() 
 {
   int position, speed, acceleration;
   cout << "Enter the initial position, the speed and the acceleration" ;
@@ -28,7 +28,11 @@ int main()
     cout << "At time " << time << " the position is " << position2 << endl;
     time += 0.5;
   }
+}
 
+int main()
+{
+  func();
 
   return 0;
 }

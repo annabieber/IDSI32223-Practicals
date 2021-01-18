@@ -2,7 +2,7 @@
 #include <cmath>
 using namespace std;
 
-int main()
+void isInCircle() 
 {
   double x, y, r, xcenter, ycenter;
   cout << "Enter the x-coordinate: ";
@@ -25,5 +25,10 @@ int main()
   else {
     cout << "The point is inside the circle";
   }
+}
+
+int main()
+{
+  isInCircle();
   return 0;
 }

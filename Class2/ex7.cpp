@@ -14,7 +14,7 @@ int power1(int n, int a)
     return 1;
   }
 
-  return a*pow(a, n-1);
+  return a*power1(n-1, a);
 }
 
 int power2(int n, int a)
@@ -26,19 +26,16 @@ int power2(int n, int a)
   }
   else if((n%2)==0)
   {
-    return pow(a, n/2)*pow(a, n/2);
+    return power2(n/2, a)*power2(n/2, a);
   }
   else 
   {
-    return pow(a, static_cast<double>(n)/2)*pow(a,static_cast<double>(n)/2)*a;
+    return power2(n/2, a)*power2(n/2, a)*a;
   }
 }
 
 void test_case(int n, int a) 
 {
-  power1(n, a);
-  power2(n, a);
-
   cout << "Number of recursion calls for the first method is " << counter1 << endl;
   cout << "Number of recursion calls for the second method is " << counter2 << endl;
 }
@@ -51,10 +48,16 @@ int main()
   cout << "Enter the number value: ";
   cin >> a;
 
-  cout << "a to the power n is " << power1(n, a) << endl; 
-  cout << "a to the power n is " << power2(n, a) << endl;
+  cout << a << " to the power " << n << " with the first method is " << power1(n, a) << endl; 
+  cout << a << " to the power " << n << " with the second method is " << power2(n, a) << endl;
 
   test_case(n, a);
 
   return 0;
 }
+
+/* To answer the question:
+  For the first function the relationship between the exponent n and the number of recursion calls denoted as r is r = n+1.
+  For the second function the relationshipt between the exponent n and the number of recursion calls denoted as r is r = (n+1)^2
+
+ */

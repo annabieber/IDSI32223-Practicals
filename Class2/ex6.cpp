@@ -2,8 +2,11 @@
 #include <cmath>
 using namespace std;
 
+int  counter = 0; 
+
 int fib(int n) 
 {
+  counter++;
   //need to define basecase
   if(n == 0)
   {
@@ -24,5 +27,6 @@ int main()
   cin >> n;
 
   cout << "Fibonacci value is " << fib(n) << endl;
+  cout << "Number of recursion calls is " << counter << endl;
   return 0;
 }
