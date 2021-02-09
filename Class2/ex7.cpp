@@ -58,6 +58,6 @@ int main()
 
 /* To answer the question:
   For the first function the relationship between the exponent n and the number of recursion calls denoted as r is r = n+1.
-  For the second function the relationshipt between the exponent n and the number of recursion calls denoted as r is r = (n+1)^2
+  For the second function the relationshipt between the exponent n and the number of recursion calls denoted as r is r = (n-1)*2+1
 
  */
