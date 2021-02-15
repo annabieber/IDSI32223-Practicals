@@ -43,9 +43,11 @@ class Patient
 
     void printReport()
     {
-      cout << "The report for patient " << this->name << endl;
+      cout << "The report of the patient" << endl;
 
       Blood highest = bloodList.at(0);
+      vector<Blood> list_highest;
+      list_highest.push_back(highest);
       int average = 0;
   
       for(int i=0; i < bloodList.size(); i++)
@@ -54,11 +56,19 @@ class Patient
         
         average += temp.diastolic; 
 
-        if(temp.systolic > 140 && temp.systolic > highest.systolic)
+        if(temp.systolic > 140 && temp.systolic >= highest.systolic)
         {
-          highest = temp;
-        }
-        
+          if(highest.systolic == temp.systolic) 
+          {
+            list_highest.push_back(temp);
+          }
+          else 
+          {
+            highest = temp;
+            list_highest.pop_back();
+            list_highest.push_back(temp);
+          }
+        }        
       }
 
        if(highest.systolic < 140) 
@@ -70,7 +80,13 @@ class Patient
           cout << "The highest abnormal systolic value was " << highest.systolic << endl;
           cout << "The corresponding diastolic value is " << highest.diastolic << endl;
           cout << "It was taken on " << highest.date.day << "/" << highest.date.month << "/" << highest.date.year << endl;
+          cout << "The list of  highest abnormal systolic value is " << endl;
+          for (int i = 0; i < list_highest.size(); i++)
+          {
+            cout << list_highest.at(i).systolic << endl;
+          }
         }
+
 
       average = average/bloodList.size();
 
