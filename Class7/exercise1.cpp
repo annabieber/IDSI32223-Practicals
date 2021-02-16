@@ -67,7 +67,6 @@ class Patient
         //check if the current systolic value is over 140 and if it's higher than the current highest value
         if(temp.systolic > 140 && temp.systolic >= highest.systolic)
         {
-          cout<<list_highest.size()<<endl;
           //if the value is the same as the current highest, then store it in the list
           if(highest.systolic == temp.systolic) 
           {
