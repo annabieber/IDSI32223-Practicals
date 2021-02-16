@@ -67,7 +67,6 @@ class Patient
         //check if the current systolic value is over 140 and if it's higher than the current highest value
         if(temp.systolic > 140 && temp.systolic >= highest.systolic)
         {
-          cout<<list_highest.size()<<endl;
           //if the value is the same as the current highest, then store it in the list
           if(highest.systolic == temp.systolic) 
           {
@@ -94,8 +93,11 @@ class Patient
       else 
       {
         cout << "The highest abnormal systolic value was " << highest.systolic << endl;
+
         cout << "The corresponding diastolic value is " << highest.diastolic << endl;
+
         cout << "It was taken on " << highest.date.day << "/" << highest.date.month << "/" << highest.date.year << endl;
+
         cout << "The list of  highest abnormal systolic value is " << endl;
         for (int i = 0; i < list_highest.size(); i++)
         {
