@@ -2,14 +2,31 @@
 #include<iomanip>
 #include<cstdlib>
 #include<ctime>
+#include<array>
 
 using namespace std;
 
-const int ms=50; // max dimensions of arrays and matrices
+const int ms=10; // max dimensions of arrays and matrices
 
 // function prototypes:
-void read_int_vector(int a[], int n);
+/* void read_int_vector(int a[], int n);
 void simpler_random_int_vector(int v[], int s, int M);
+ */
+void print_int_vector(int a[])
+{
+  cout << "{";
+  for(int i = 0; i < a.size(); i++)
+    cout << v1[i] << " ,";
+  cout << "}" << endl; 
+}
+
+void read_int_vector(int a[])
+{
+  for(int i = 0; i < a.size(); i++){
+    cout << i+1 << ". numero: ";
+    cin >> a[i];
+  }
+}
 
 int main()
 {
@@ -17,16 +34,18 @@ int main()
 
   int v1[ms], s;
 
-  do{
+  /* do{
     cout << "Vector dimension? ";
     cin >> s;
     if(s>ms)
         cout << "The maximal dimension is:  " << ms << "\n";
-  }while(s>ms);
+  }while(s>ms); */
 
-  read_int_vector(v1,s);
+  //read_int_vector(v1,s);
+  read_int_vector(v1);
+  print_int_vector(v1);
 
-  cout << "The elements of the inputed array are: \n";
+  /* cout << "The elements of the inputed array are: \n";
   for(int i=0;i<s;i++)
     cout << v1[i] << " ";
   cout << "\n";
@@ -37,7 +56,7 @@ int main()
   for(int i=0;i<s;i++)
     cout << v1[i] << " ";
   cout << "\n";
-
+ */
   return 0;
 }
 
@@ -50,6 +69,9 @@ void read_int_vector(int a[], int n){
     cin >> a[i];
   }
 }
+
+
+
 
 // Function that create an array with s integers randomly generated in the interval [0,M]
 void simpler_random_int_vector(int v[], int s, int M){
